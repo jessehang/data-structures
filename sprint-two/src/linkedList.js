@@ -4,7 +4,7 @@ var LinkedList = function() {
   list.tail = null;
 
   list.addToTail = function(value) {
-    if(list.head !== null) {
+    if (list.head !== null) {
       var newTail = Node(value);
       list.tail.next = newTail;
       list.tail = newTail;
@@ -23,7 +23,7 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
-    while(list.head !== null) {
+    while (list.head !== null) {
       if (list.head.value === target) {
         return true;
       } 
@@ -49,3 +49,5 @@ var Node = function(value) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+//This has a linear time complexity
