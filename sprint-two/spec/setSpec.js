@@ -24,4 +24,10 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  it('should check if the set contains a specific value', function () {
+    set.add('Mel Gibson');
+    set.add('David Smith');
+    expect(set.contains('David Smith')).to.equal(true);
+    expect(set.contains('Daniel Smith')).to.equal(false);
+  });
 });
