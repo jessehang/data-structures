@@ -4,7 +4,7 @@ var HashTable = function() {
   this._storage = LimitedArray(this._limit);
 };
 
-HashTable.prototype.insert = function(k, v) {
+HashTable.prototype.insert = function(k, v) { //Constant time constraint
   var index = getIndexBelowMaxForKey(k, this._limit);
   if (this._storage.get(index)) {
     this._storage.get(index)[k] = v;//Check if this accesses storage and sets new key
@@ -15,12 +15,12 @@ HashTable.prototype.insert = function(k, v) {
   }
 };
 
-HashTable.prototype.retrieve = function(k) {
+HashTable.prototype.retrieve = function(k) { //Constaint time constraint
   var index = getIndexBelowMaxForKey(k, this._limit);
   return this._storage.get(index)[k];
 };
 
-HashTable.prototype.remove = function(k) {
+HashTable.prototype.remove = function(k) { //Constant time constraint
   var index = getIndexBelowMaxForKey(k, this._limit);
   this._storage.get(index)[k] = undefined;
   //this._storage.set(index, this._storage.get(index)[key]undefined);
