@@ -37,4 +37,11 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should check if the last left node is null', function () {
+    binarySearchTree.insert(5);
+    binarySearchTree.insert(4);
+    binarySearchTree.insert(3);
+    expect(binarySearchTree.left.left.left).to.equal(null);
+  });
 });
